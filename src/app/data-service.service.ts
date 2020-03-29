@@ -17,11 +17,8 @@ export class DataServiceService {
   getOnlySpecificData(){
     let newData = [];
 
-    newData=TotalData.rows.reverse();
-    console.log(TotalData.rows.reverse());
-
-    let tempData = TotalData.rows.reverse().slice(0,6);
-    console.log(tempData);
+    let len = TotalData.rows.length;
+    let tempData = TotalData.rows.reverse().slice(len-6,len);
     tempData.forEach(element => {
       let tempObj = {};
       tempObj["key"] = element.key[1];
